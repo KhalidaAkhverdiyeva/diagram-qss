@@ -1,33 +1,13 @@
 import ChartsSection from "./components/Charts Section/chartsSection";
 import FilterDropdown from "./components/Filters/filters";
 import DoubleRangeSlider from "./components/Range Bar/rangeBar";
+import {
+  dynamicOptions1,
+  dynamicOptions2,
+  dynamicOptions3,
+} from "./static/dynamicOptions5";
 
 const App = () => {
-  const dynamicOptions1 = [
-    "Army ",
-    "Index",
-    "Health",
-    "Transportation",
-    "Education",
-    "Social",
-    "Government",
-    "Transportation",
-    "Business",
-    "Technology & Innovation",
-    "Agriculture",
-  ];
-  const dynamicOptions2 = ["Option 1", "Option 2", "Option 3", "Option 4"];
-  const dynamicOptions3 = [
-    "2000",
-    "2001",
-    "2002",
-    "2003",
-    "2004",
-    "2005",
-    "2006",
-    "2007",
-  ];
-
   return (
     <div className="bg-[#051124] min-h-screen">
       <div className="flex items-center gap-[20px] pt-[50px] px-[30px]">

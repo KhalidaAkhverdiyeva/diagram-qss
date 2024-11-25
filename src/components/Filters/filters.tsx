@@ -11,7 +11,6 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({ items }) => {
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Set the default selected item to the first item when component mounts
   useEffect(() => {
     if (items.length > 0) {
       setSelectedItem(items[0]);
