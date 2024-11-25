@@ -10,7 +10,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   selectedItem,
 }) => {
   return (
-    <ul className="absolute z-10 mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-40 overflow-y-auto transition-transform duration-200 ease-in-out">
+    <ul className="absolute z-10 mt-2 w-full bg-[#293F64]  rounded-md shadow-lg max-h-[220px] overflow-y-auto transition-transform duration-200 ease-in-out">
       {filteredItems.length > 0 ? (
         filteredItems.map((item: string, index: number) => (
           <li
@@ -20,7 +20,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           ${
             selectedItem === item
               ? "bg-blue-100 text-blue-600 font-semibold"
-              : "text-gray-700 hover:bg-blue-500 hover:text-white"
+              : "text-[#A7B4CA] font-[500] hover:bg-blue-500 hover:text-white"
           }`}
           >
             {item}

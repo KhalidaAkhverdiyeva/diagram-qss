@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Dropdown from "../Dropdown/dropdown";
 
-// Define the types for the props
 interface FilterDropdownProps {
-  items: string[]; // Dynamic items passed from the parent
+  items: string[];
 }
 
 const FilterDropdown: React.FC<FilterDropdownProps> = ({ items }) => {
@@ -11,6 +10,13 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({ items }) => {
   const [filterText, setFilterText] = useState("");
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Set the default selected item to the first item when component mounts
+  useEffect(() => {
+    if (items.length > 0) {
+      setSelectedItem(items[0]);
+    }
+  }, [items]);
 
   const handleSelectItem = (item: string) => {
     setSelectedItem(item);
@@ -41,14 +47,14 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({ items }) => {
     : items;
 
   return (
-    <div className="relative w-64" ref={dropdownRef}>
+    <div className="relative w-full" ref={dropdownRef}>
       <div>
         <input
           type="text"
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}
           placeholder={selectedItem || "Search or select an option..."}
-          className="w-full border border-gray-300 rounded-md placeholder:text-black px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border bg-[#293F64] border-[#4A628A] text-[#A7B4CA] font-[500] rounded-md placeholder:text-[#A7B4CA] px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={() => setIsOpen(true)}
         />
       </div>
